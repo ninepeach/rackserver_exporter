@@ -1,0 +1,11 @@
+groups:
+  dell:
+    username: root
+    password: passwd
+  hp:
+    username: root
+    password: passwd
+  inspur:
+    username: root
+    password: passwd 
+    basicauth: true
