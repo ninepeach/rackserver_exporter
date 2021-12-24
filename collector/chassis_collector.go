@@ -167,15 +167,15 @@ func (c *ChassisCollector) Collect(ch chan<- prometheus.Metric) {
 			chassisLogContext.Info("collector scrape started")
 
 			SerialNumber := chassis.SerialNumber
-			Sku := chassis.SKU
-			if Sku!="" {
-				SerialNumber = Sku
-			}
 
 			systemManufacturer := "Unknown"
 			if chassis.Manufacturer != "" {
 				tmpStr := strings.Split(chassis.Manufacturer, " ")
 				systemManufacturer = tmpStr[0]
+			}
+
+			if systemManufacturer=="Dell" {
+				SerialNumber = chassis.SKU
 			}
 
 			chassisID := chassis.ID

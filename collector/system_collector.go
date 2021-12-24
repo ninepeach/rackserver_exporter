@@ -214,10 +214,6 @@ func (s *SystemCollector) Collect(ch chan<- prometheus.Metric) {
 			// server info
 			SystemID := system.ID
 			SerialNumber := system.SerialNumber
-			Sku := system.SKU
-			if Sku!="" {
-				SerialNumber = Sku
-			}
 
 			systemModel := system.Model
 
@@ -227,6 +223,10 @@ func (s *SystemCollector) Collect(ch chan<- prometheus.Metric) {
 				systemManufacturer = tmpStr[0]
 			}
 			
+			if systemManufacturer=="Dell" {
+				SerialNumber = system.SKU
+			}
+
 			//common status
 			systemState := system.Status.State
 			systemHealthStatus := system.Status.Health
