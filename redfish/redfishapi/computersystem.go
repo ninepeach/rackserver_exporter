@@ -67,6 +67,7 @@ type ComputerSystem struct {
 	Redundancy string
 	// RedundancyCount is the number of Redundancy objects.
 	RedundancyCount string `json:"Redundancy@odata.count"`
+	SKU string
 	SerialNumber string
 	// SimpleStorage shall be a link to a collection of type SimpleStorageCollection.
 	simpleStorage string

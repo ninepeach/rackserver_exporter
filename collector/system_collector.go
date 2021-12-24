@@ -214,6 +214,11 @@ func (s *SystemCollector) Collect(ch chan<- prometheus.Metric) {
 			// server info
 			SystemID := system.ID
 			SerialNumber := system.SerialNumber
+			Sku := system.SKU
+			if Sku!="" {
+				SerialNumber = Sku
+			}
+
 			systemModel := system.Model
 
 			systemManufacturer := "Unknown"

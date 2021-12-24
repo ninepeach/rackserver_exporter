@@ -175,6 +175,7 @@ type Chassis struct {
 	// PowerState shall contain the power state of the
 	// chassis.
 	PowerState string
+	SKU string
 	// SerialNumber shall contain a manufacturer-allocated
 	// number that identifies the chassis.
 	SerialNumber string
