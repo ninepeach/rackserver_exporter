@@ -158,6 +158,10 @@ func (serviceroot *Service) UnmarshalJSON(b []byte) error {
 	serviceroot.updateService = string(t.UpdateService)
 	serviceroot.Oem = t.Oem
 
+        if serviceroot.sessions=="" {
+            serviceroot.sessions="/redfish/v1/SessionService/Sessions"
+        }
+
 	return nil
 }
 
